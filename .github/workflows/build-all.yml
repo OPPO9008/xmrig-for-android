@@ -8,6 +8,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 #on:
 #  push:
 #    tags:
@@ -21,7 +23,7 @@ jobs:
     steps:
     - uses: actions/setup-python@v2
       with:
-        python-version: '2.x'
+        python-version: '3.x'
         architecture: 'x64'
     - uses: nttld/setup-ndk@v1.0.6
       with:
