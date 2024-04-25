@@ -56,7 +56,7 @@ jobs:
     - run: node update_version.js
     
     - name: Build XMRig, libUV, OpenSSL & hwloc
-      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all && cd .. && cd .. 
+      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make -j$(nproc) all > /dev/null && cd .. && cd .. 
         
     - run: yarn
     - run: cd android && ./gradlew bundleRelease && cd ..
